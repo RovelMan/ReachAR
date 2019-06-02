@@ -6,20 +6,25 @@ public class resetButtonHandler : MonoBehaviour
 {
 
     private Vector3 startPos;
+    private GameObject ball;
+    private GameObject board;
 
     void Start()
     {
-        startPos = GameObject.Find("Board").transform.position;
-        // startPos = new Vector3(
-        //     GameObject.Find("Board").transform.position.x,
-        //     GameObject.Find("Board").transform.position.y,
-        //     GameObject.Find("Board").transform.position.z
-        // );
+        ball = GameObject.Find("Ball");
+        board = GameObject.Find("Board");
     }
 
     public void resetBall()
     {
-        GameObject.Find("Ball").transform.position = startPos;
+        ball.GetComponent<Rigidbody>().isKinematic = true;
+        ball.GetComponent<Rigidbody>().useGravity = false;
+        startPos = new Vector3(
+            board.transform.position.x,
+            board.transform.position.y+0.1f,
+            board.transform.position.z
+        );
+        ball.transform.position = startPos;
     }
     
 }

@@ -11,7 +11,7 @@ public class ball_physics : MonoBehaviour
     void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
-        _velocity = new Vector3(.5f, 0f, .4f);
+        _velocity = new Vector3(.5f, 0f, .0f);
         _rb.AddForce(_velocity, ForceMode.VelocityChange);
     }
 

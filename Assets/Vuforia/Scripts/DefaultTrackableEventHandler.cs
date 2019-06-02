@@ -89,36 +89,36 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 
         // Enable rendering:
         foreach (var component in rendererComponents) {
-            if (component.name == "Ball") {
-                component.enabled = false;
-            }
+            // if (component.name == "Ball") {
+            //     component.enabled = false;
+            // }
             component.enabled = true;
         }
 
         // Enable colliders:
         foreach (var component in colliderComponents) {
-            if (component.name == "Ball") {
-                component.enabled = false;
-            }
+            // if (component.name == "Ball") {
+            //     component.enabled = false;
+            // }
             component.enabled = true;
         }
 
         // Enable canvas':
         foreach (var component in canvasComponents) {
-            if (component.name == "Ball") {
-                component.enabled = false;
-            }
+            // if (component.name == "Ball") {
+            //     component.enabled = false;
+            // }
             component.enabled = true;
         }
             
-        var rigidBody = GetComponentsInChildren<Rigidbody>(true);
+        // var rigidBody = GetComponentsInChildren<Rigidbody>(true);
 
-        foreach (var component in rigidBody) {
-            if (component.name == "Ball") {
-                component.isKinematic = false;
-                component.useGravity = true;
-            }
-        }
+        // foreach (var component in rigidBody) {
+        //     if (component.name == "Ball") {
+        //         component.isKinematic = false;
+        //         component.useGravity = true;
+        //     }
+        // }
     }
 
 

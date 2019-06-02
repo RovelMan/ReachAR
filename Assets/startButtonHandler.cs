@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class startButtonHandler : MonoBehaviour
 {
-    public void startBall()
+
+    private GameObject ball;
+
+    void Start()
     {
-        
+        ball = GameObject.Find("Ball");
+    }
+
+     public void startBall()
+    {
+        ball.GetComponent<Rigidbody>().isKinematic = false;
+        ball.GetComponent<Rigidbody>().useGravity = true;
     }
 }
