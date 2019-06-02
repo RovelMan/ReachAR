@@ -25,6 +25,7 @@ public class resetButtonHandler : MonoBehaviour
             board.transform.position.z
         );
         ball.transform.position = startPos;
+        Debug.Log("reset");
     }
     
 }
