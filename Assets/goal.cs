@@ -5,24 +5,17 @@ using UnityEngine;
 public class goal : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject ball;
+    private GameObject resetButton;
+    private resetButtonHandler resetHandler;
     void Start()
     {
-       Debug.Log("goal exists"); 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        resetButton = GameObject.Find("ResetButton");
+        resetHandler = (resetButtonHandler) resetButton.GetComponent(typeof(resetButtonHandler));
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // if (other.tag == "player") {
-            MeshRenderer meshRend = GetComponent<MeshRenderer>();
-            meshRend.material.color = Color.green;
-            Debug.Log("hei");
-        // }
+        Debug.Log("hei");
+        resetHandler.resetBall();
     }
 }
