@@ -25,7 +25,7 @@ public class resetButtonHandler : MonoBehaviour
             board.transform.position.z
         );
         ball.transform.position = startPos;
-        ball.transform.rotation = new Quaternion(0, 0, 0, 0);
+        ball.transform.rotation = Quaternion.Euler(0, 0, 0);
         Debug.Log("reset");
     }
     
