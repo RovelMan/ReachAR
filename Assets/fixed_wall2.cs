@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class fixed_wall2 : MonoBehaviour
 {
@@ -8,6 +9,16 @@ public class fixed_wall2 : MonoBehaviour
     
     void Update()
     {
-        transform.rotation = Quaternion.Euler (lockPos, GameObject.Find("Wall2").transform.rotation.eulerAngles.y, lockPos);
+        transform.rotation = Quaternion.Euler(lockPos, GameObject.Find("Wall2").transform.rotation.eulerAngles.y, lockPos);
+        try {
+            GameObject.Find("Wall2").transform.position = new Vector3(
+                GameObject.Find("Wall2").transform.position.x,
+                GameObject.Find("Board").transform.position.y,
+                GameObject.Find("Wall2").transform.position.z
+            );
+        }
+        catch (Exception e) {
+            print("Error");
+        }
     }
 }
