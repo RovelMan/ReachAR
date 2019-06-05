@@ -8,11 +8,13 @@ public class resetButtonHandler : MonoBehaviour
     private Vector3 startPos;
     private GameObject ball;
     private GameObject board;
+    private GameObject ControlCanvas;
 
     void Start()
     {
         ball = GameObject.Find("Ball");
         board = GameObject.Find("Board");
+        ControlCanvas = GameObject.Find("ControlCanvas");
     }
 
     public void resetBall()
@@ -26,6 +28,7 @@ public class resetButtonHandler : MonoBehaviour
         );
         ball.transform.position = startPos;
         ball.transform.rotation = Quaternion.Euler(0, 0, 0);
+        ControlCanvas.SetActive(true);
         Debug.Log("reset");
     }
     
