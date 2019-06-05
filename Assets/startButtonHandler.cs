@@ -13,7 +13,8 @@ public class startButtonHandler : MonoBehaviour
     }
 
      public void startBall()
-    {
+    {   
+        Debug.Log("clicked");
         ball.GetComponent<Rigidbody>().isKinematic = false;
         ball.GetComponent<Rigidbody>().useGravity = true;
     }
