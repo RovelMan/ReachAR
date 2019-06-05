@@ -1,6 +1,8 @@
 # ReachAR
 AR game with real time interaction
 
+## Level2 Is the only fully working level as of now
+
 ## TODO
 * ~~Add complettion of stage screen~~
 * ~~Add Multiple levels~~
@@ -19,4 +21,9 @@ AR game with real time interaction
 * ~~Reset Ball Completely Resets Velocity~~
 * ~~Make Level2 complete~~
 * Wall 10 and 11 Stops ball completely when close
-* Testing With Acutall AR targets 
+* Testing With Acutall AR targets
+* ~~Force LandScape mode~~
+* ~~Tried Dragging and Dropping in AR, it sucked~~
+* ~~Add Clear Level rating based on number of walls used~~
+* Add Go Back to Main Menu option in a Level
+

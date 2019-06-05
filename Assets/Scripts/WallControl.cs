@@ -14,12 +14,6 @@ public class WallControl : MonoBehaviour
         Board = GameObject.Find("Board");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SelectWall(int index)
     {
         switch(index)
@@ -54,5 +48,10 @@ public class WallControl : MonoBehaviour
         Quaternion WallRotation = Wall.transform.rotation;
         WallRotation.y += rotation.y;
         Wall.transform.rotation = WallRotation;
+    }
+
+    void Update()
+    {
+
     }
 }

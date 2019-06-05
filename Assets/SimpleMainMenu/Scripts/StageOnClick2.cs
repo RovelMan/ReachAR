@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class StageOnClick2 : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,8 +11,20 @@ public class StageOnClick2 : MonoBehaviour
     {
         MenuCanvas = GameObject.Find("MenuCanvas");
         script = (MenuLogic) MenuCanvas.GetComponent(typeof(MenuLogic));
+
+        GameObject.Find("Stage2Button").GetComponentInChildren<Text>().text += GetStageRating();
     }
 
+    private string GetStageRating()
+    {
+        string stars = "";
+        int rating = PlayerPrefs.GetInt("Level2");
+        for (int i = 0; i < rating; i++)
+        {
+            stars += " *";
+        }
+        return stars;
+    }
     // Update is called once per frame
     void Update()
     {
