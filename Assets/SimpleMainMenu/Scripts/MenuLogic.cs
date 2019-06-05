@@ -40,7 +40,7 @@ public class MenuLogic : MonoBehaviour
                 SceneManager.LoadScene("Level1", LoadSceneMode.Single);
                 break;
             case 2:
-                Debug.Log("Shoud load level 2");
+                SceneManager.LoadScene("Level2", LoadSceneMode.Single);
                 break;
             case 3:
                 Debug.Log("Should load level 3");
