@@ -45,4 +45,11 @@ public class WallControl : MonoBehaviour
         WallPosition.y = Board.transform.position.y;
         Wall.transform.position = WallPosition;
     }
+    public void RotateWall(Quaternion rotation)
+    {
+        Debug.Log(rotation);
+        Quaternion WallRotation = Wall.transform.rotation;
+        WallRotation.y += rotation.y;
+        Wall.transform.rotation = WallRotation;
+    }
 }
