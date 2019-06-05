@@ -29,3 +29,6 @@ AR game with real time interaction
 * Add Go Back to Main Menu option in a Level
 * Border Walls are very spikey when hit
 * Make a switch statement for inital pos of ball based on level
+* Fix level rating in AR
+* Fix directional Arrow in AR
+

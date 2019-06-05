@@ -67,32 +67,15 @@ public class ball_physics : MonoBehaviour
 
     public void ResetBall() 
     {   
-        // _rb.isKinematic = true;
-        // _rb.useGravity = false;
         if (isOriginal) {
             Destroy(ballClone);
             ball.SetActive(true);
             arrow.enabled = true;
         }
 
-        // Vector3 startPos = new Vector3(
-        //     board.transform.position.x,
-        //     board.transform.position.y+initialPos.y,
-        //     board.transform.position.z
-        // );
-
-
-        // board.GetComponentInChildren<GameObject>().transform.position = initialBallPos;
-        // ball.transform.position = initialBallPos;
-        // _rb.velocity = Vector3.zero;
-        // _rb.angularVelocity = Vector3.zero;
-        // _rb.AddForce(_velocity, ForceMode.VelocityChange);
-
-        // arrow.SetPosition(0, ball.transform.position);
-        // arrow.SetPosition(1, ball.transform.position + Vector3.Scale(_velocity, new Vector3(0.1f, 0.1f, 0.1f)));
-        // arrow.enabled = true;
     }
     void Update()
     {
+
     }
 }
