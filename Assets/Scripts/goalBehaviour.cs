@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class goalBehaviour : MonoBehaviour
 {
@@ -8,8 +9,12 @@ public class goalBehaviour : MonoBehaviour
     private GameObject resetButton;
     private GameObject WinPanel;
     private resetButtonHandler resetHandler;
+    private string SceneName;
+    private 
     void Start()
     {
+        
+        SceneName = SceneManager.GetActiveScene().name;
         resetButton = GameObject.Find("ResetButton");
         resetHandler = (resetButtonHandler) resetButton.GetComponent(typeof(resetButtonHandler));
         WinPanel = GameObject.FindWithTag("WinPanel");
@@ -26,9 +31,22 @@ public class goalBehaviour : MonoBehaviour
     {
         MeshRenderer meshRend = GetComponent<MeshRenderer>();
         meshRend.material.color = Color.green;
+        int stageLevel = 0;
+        switch(SceneName)
+        {
+            case "Level1":
+                stageLevel = 1;
+                break;
+            case "Level2":
+                stageLevel = 2;
+                break;
+            default:
+                stageLevel = 1;
+                break;
+        }
         int currentLevel = PlayerPrefs.GetInt("currentLevel");
-        if (currentLevel < 1) {
-            PlayerPrefs.SetInt("currentLevel", 1);
+        if (currentLevel < stageLevel) {
+            PlayerPrefs.SetInt("currentLevel", stageLevel);
         }
         WinPanel.SetActive(true);
 

@@ -26,12 +26,15 @@ public class WallControl : MonoBehaviour
         {
             case 1:
                 Wall = GameObject.Find("Wall1");
+                Debug.Log("Wall1 Selected");
                 break;
             case 2:
                 Wall = GameObject.Find("Wall2");
+                Debug.Log("Wall2 Selected");
                 break;
             case 3:
                 Wall = GameObject.Find("Wall3");
+                Debug.Log("Wall3 Selected");
                 break;
             default:
                 Wall = GameObject.Find("Wall1");
