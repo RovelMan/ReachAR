@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ball_physics : MonoBehaviour
 {
@@ -8,22 +9,19 @@ public class ball_physics : MonoBehaviour
     private Vector3 _velocity;
     private LineRenderer arrow;
 
-    private Vector3 initialPos;
+    private Vector3 initialBallPos;
+
     private GameObject ball;
     private GameObject board;
-
-    // private GameObject ARCamera;
-    // Use this for initialization
     void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
         ball = GameObject.Find("Ball");
-        initialPos = ball.transform.position;
+        initialBallPos = ball.transform.position;
+
         board = GameObject.Find("Board");
-        // ARCamera = GameObject.Find("ARCamera");
-        // ARCamera.transform.position = board.transform.position + new Vector3(0f, 1f, 0f);
-        // ARCamera.transform.rotation = Quaternion.Euler(180f, -180f, 0);
         arrow = ball.GetComponent(typeof(LineRenderer)) as LineRenderer;
+
         _velocity = new Vector3(0f, 0f, .5f);
 
         _rb.AddForce(_velocity, ForceMode.VelocityChange);
@@ -54,7 +52,10 @@ public class ball_physics : MonoBehaviour
         //     board.transform.position.y+initialPos.y,
         //     board.transform.position.z
         // );
-        ball.transform.position = initialPos;
+
+
+        // board.GetComponentInChildren<GameObject>().transform.position = initialBallPos;
+        ball.transform.position = initialBallPos;
         _rb.velocity = Vector3.zero;
         _rb.angularVelocity = Vector3.zero;
         _rb.AddForce(_velocity, ForceMode.VelocityChange);

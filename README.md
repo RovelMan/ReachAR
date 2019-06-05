@@ -20,10 +20,12 @@ AR game with real time interaction
 * ~~Direction of ball shown before play~~
 * ~~Reset Ball Completely Resets Velocity~~
 * ~~Make Level2 complete~~
-* Wall 10 and 11 Stops ball completely when close
+* BorderWall 10 and 11 Stops ball completely when colliding
 * Testing With Acutall AR targets
+  * Ball needs to be reset relatively to the center of the board
 * ~~Force LandScape mode~~
 * ~~Tried Dragging and Dropping in AR, it sucked~~
 * ~~Add Clear Level rating based on number of walls used~~
 * Add Go Back to Main Menu option in a Level
-
+* Border Walls are very spikey when hit
+* Make a switch statement for inital pos of ball based on level

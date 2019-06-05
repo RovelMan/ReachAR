@@ -22,7 +22,7 @@ public class RotateLeftOnClick : MonoBehaviour, IPointerDownHandler, IPointerUpH
         if (!ispressed){
             return;
         }
-        Quaternion rotationInc = Quaternion.Euler(0f, -1f, 0f);
+        Quaternion rotationInc = Quaternion.Euler(0f, -2f, 0f);
         script.RotateWall(rotationInc);
     }
     public void OnPointerDown(PointerEventData eventData)
