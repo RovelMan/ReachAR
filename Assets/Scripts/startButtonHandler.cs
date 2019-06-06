@@ -24,8 +24,6 @@ public class startButtonHandler : MonoBehaviour
      public void startBall()
     {  
         ControlCanvas.SetActive(false);
-        script.DisableArrow();
-        ball.GetComponent<Rigidbody>().isKinematic = false;
-        ball.GetComponent<Rigidbody>().useGravity = true;
+        script.StartRolling();
     }
 }

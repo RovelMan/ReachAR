@@ -12,31 +12,53 @@ public class ball_physics : MonoBehaviour
     private Vector3 initialBallPos;
 
     private GameObject ball;
+
+    private bool isOriginal;
+    private GameObject ballClone;
     private GameObject board;
     void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
-        ball = GameObject.Find("Ball");
-        initialBallPos = ball.transform.position;
+        ball = gameObject;
 
-        board = GameObject.Find("Board");
-        arrow = ball.GetComponent(typeof(LineRenderer)) as LineRenderer;
+        if (ball.name.Contains("Clone")) {
+            isOriginal = false;
+        } else {
+            isOriginal = true;
+        }
 
         _velocity = new Vector3(0f, 0f, .5f);
 
         _rb.AddForce(_velocity, ForceMode.VelocityChange);
 
-        arrow.SetPosition(0, ball.transform.position);
-        arrow.SetPosition(1, ball.transform.position + Vector3.Scale(_velocity, new Vector3(0.1f, 0.1f, 0.1f)));
+        if (isOriginal) {
+            initialBallPos = ball.transform.position;
+
+            board = GameObject.Find("Board");
+            arrow = ball.GetComponent(typeof(LineRenderer)) as LineRenderer;
+
+
+            arrow.SetPosition(0, ball.transform.position);
+            arrow.SetPosition(1, ball.transform.position + Vector3.Scale(_velocity, new Vector3(0.1f, 0.1f, 0.1f)));
+        }
+
     }
 
     void OnCollisionEnter(Collision collision){
         ReflectProjectile(_rb, collision.contacts[0].normal);
     }
 
-    public void DisableArrow()
+    public void StartRolling()
     {
-        arrow.enabled = false;
+
+        if (isOriginal && ballClone == null) {
+            arrow.enabled = false;
+            ball.SetActive(false);
+            ballClone = Instantiate(ball, board.transform);
+            ballClone.SetActive(true);
+            ballClone.GetComponent<Rigidbody>().isKinematic = false;
+            ballClone.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
     private void ReflectProjectile(Rigidbody rb, Vector3 reflectVector)
     {    
@@ -45,8 +67,14 @@ public class ball_physics : MonoBehaviour
 
     public void ResetBall() 
     {   
-        _rb.isKinematic = true;
-        _rb.useGravity = false;
+        // _rb.isKinematic = true;
+        // _rb.useGravity = false;
+        if (isOriginal) {
+            Destroy(ballClone);
+            ball.SetActive(true);
+            arrow.enabled = true;
+        }
+
         // Vector3 startPos = new Vector3(
         //     board.transform.position.x,
         //     board.transform.position.y+initialPos.y,
@@ -55,14 +83,14 @@ public class ball_physics : MonoBehaviour
 
 
         // board.GetComponentInChildren<GameObject>().transform.position = initialBallPos;
-        ball.transform.position = initialBallPos;
-        _rb.velocity = Vector3.zero;
-        _rb.angularVelocity = Vector3.zero;
-        _rb.AddForce(_velocity, ForceMode.VelocityChange);
+        // ball.transform.position = initialBallPos;
+        // _rb.velocity = Vector3.zero;
+        // _rb.angularVelocity = Vector3.zero;
+        // _rb.AddForce(_velocity, ForceMode.VelocityChange);
 
-        arrow.SetPosition(0, ball.transform.position);
-        arrow.SetPosition(1, ball.transform.position + Vector3.Scale(_velocity, new Vector3(0.1f, 0.1f, 0.1f)));
-        arrow.enabled = true;
+        // arrow.SetPosition(0, ball.transform.position);
+        // arrow.SetPosition(1, ball.transform.position + Vector3.Scale(_velocity, new Vector3(0.1f, 0.1f, 0.1f)));
+        // arrow.enabled = true;
     }
     void Update()
     {
