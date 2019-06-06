@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="wall3" size="0.060000 0.060000" />
-    <ImageTarget name="wall2" size="0.060000 0.060826" />
-    <ImageTarget name="wall1" size="0.060000 0.059108" />
+    <ImageTarget name="wallTag5" size="0.150000 0.149619" />
+    <ImageTarget name="wallTag4" size="0.150000 0.150000" />
+    <ImageTarget name="wallTag3" size="0.150000 0.149241" />
+    <ImageTarget name="wallTag2" size="0.150000 0.149620" />
+    <ImageTarget name="wallTag1" size="0.150000 0.147767" />
+    <ImageTarget name="boardTag" size="0.150000 0.147739" />
     <ImageTarget name="wall" size="0.060000 0.060000" />
     <ImageTarget name="board" size="0.150000 0.150000" />
     <ImageTarget name="card2" size="0.060000 0.082832" />
