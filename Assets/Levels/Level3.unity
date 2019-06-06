@@ -504,7 +504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 135841263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f5147052904824399cff87aa941d49, type: 3}
+  m_Script: {fileID: 11500000, guid: f1b641a26a1f8bb46aeafb82cbf976ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &135841266
@@ -2561,6 +2561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ddf2f0f16ecdc43bb0db0d3bb6980e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ControlCanvas: {fileID: 0}
+  script: {fileID: 0}
+  ispressed: 0
 --- !u!114 &605644892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3400,7 +3403,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 700371303}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec2b7971d03f709459aa975409ff6674, type: 3}
+  m_Script: {fileID: 11500000, guid: f1b641a26a1f8bb46aeafb82cbf976ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &700371306
@@ -8103,7 +8106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1439706379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ddf2f0f16ecdc43bb0db0d3bb6980e, type: 3}
+  m_Script: {fileID: 11500000, guid: f1b641a26a1f8bb46aeafb82cbf976ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1439706382
@@ -8305,13 +8308,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457381958}
-  m_LocalRotation: {x: 0.30595142, y: 0.4100459, z: -0.14823219, w: 0.84633523}
+  m_LocalRotation: {x: 0.27794695, y: 0.4146999, z: -0.13466413, w: 0.8559411}
   m_LocalPosition: {x: -16.9, y: 29.6, z: -41.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 39.75, y: 51.7, z: 0}
+  m_LocalEulerAnglesHint: {x: 35.98, y: 51.7, z: 0}
 --- !u!114 &1457381964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10439,7 +10442,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810820590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f519717bbd5af03439aa4de5b43ea10f, type: 3}
+  m_Script: {fileID: 11500000, guid: f1b641a26a1f8bb46aeafb82cbf976ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1810820593
@@ -11202,7 +11205,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998387111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc52bebcbd153114d85f25e6cc9a24f2, type: 3}
+  m_Script: {fileID: 11500000, guid: f1b641a26a1f8bb46aeafb82cbf976ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1998387114
@@ -11719,7 +11722,7 @@ GameObject:
   - component: {fileID: 2043803595}
   - component: {fileID: 2043803594}
   m_Layer: 5
-  m_Name: RotateLefttButton
+  m_Name: RotateLeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11754,7 +11757,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043803592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a83f1c7b2289184ba05cf5cf3b12f0f, type: 3}
+  m_Script: {fileID: 11500000, guid: f1b641a26a1f8bb46aeafb82cbf976ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2043803595

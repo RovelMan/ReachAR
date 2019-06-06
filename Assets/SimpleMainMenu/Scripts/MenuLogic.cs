@@ -33,21 +33,8 @@ public class MenuLogic : MonoBehaviour
         Menu.SetActive(false);
     }
 
-    public void PlayStage(int stage)
+    public void PlayStage(string stageName)
     {
-        switch(stage){
-            case 1:
-                SceneManager.LoadScene("Level1", LoadSceneMode.Single);
-                break;
-            case 2:
-                SceneManager.LoadScene("Level2", LoadSceneMode.Single);
-                break;
-            case 3:
-                Debug.Log("Should load level 3");
-                break;
-            default:
-                Debug.Log("default option");
-                break;
-        }
+        SceneManager.LoadScene(stageName, LoadSceneMode.Single);
     }
 }
