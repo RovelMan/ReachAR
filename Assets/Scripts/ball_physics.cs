@@ -27,7 +27,7 @@ public class ball_physics : MonoBehaviour
             isOriginal = true;
         }
 
-        _velocity = new Vector3(0f, 0f, .5f);
+        _velocity = new Vector3(0f, 0f, 10f);
 
         _rb.AddForce(_velocity, ForceMode.VelocityChange);
 
