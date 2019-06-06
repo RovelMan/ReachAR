@@ -31,7 +31,7 @@ public class goalBehaviour : MonoBehaviour
     private int levelRating()
     {
         GameObject UserWalls = GameObject.Find("UserWalls");
-        GameObject gameplane = GameObject.Find("floor_1_LOD0");
+        GameObject gameplane = GameObject.Find("naturePack_001");
 
         float x_1 = gameplane.transform.localScale.x*UserWalls.transform.localScale.x;
         float x_0 = -x_1;
