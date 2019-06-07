@@ -79,6 +79,8 @@ public class ball_physics : MonoBehaviour
     {
         if (!isOriginal)
         {
+
+            _rb.AddForce(new Vector3(0f, -9.81f, 0), ForceMode.VelocityChange);
             Vector3 direction = _rb.velocity;
             float speed = 9f;//direction.magnitude;
             direction.Normalize();
