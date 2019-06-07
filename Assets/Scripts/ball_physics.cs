@@ -46,7 +46,19 @@ public class ball_physics : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        ReflectProjectile(_rb, collision.contacts[0].normal);
+        ContactPoint cp = collision.contacts[0];
+         // calculate with addition of normal vector
+         // myRigidbody.velocity = oldVel + cp.normal*2.0f*oldVel.magnitude;
+         
+         // calculate with Vector3.Reflect
+        _rb.velocity = Vector3.Reflect(_rb.velocity,cp.normal);
+         
+         // bumper effect to speed up ball
+        // myRigidbody.velocity += cp.normal*2.0f;
+        // for (int i = 0; i < collision.contacts.Length; i++)
+        // {
+        //     ReflectProjectile(_rb, collision.contacts[i].normal);
+        // }
     }
 
     public void StartRolling()
@@ -79,8 +91,6 @@ public class ball_physics : MonoBehaviour
     {
         if (!isOriginal)
         {
-
-            _rb.AddForce(new Vector3(0f, -9.81f, 0), ForceMode.VelocityChange);
             Vector3 direction = _rb.velocity;
             float speed = 9f;//direction.magnitude;
             direction.Normalize();
