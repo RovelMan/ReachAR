@@ -8,6 +8,6 @@ public class fixed_board : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Quaternion.Euler (lockPos, lockPos, lockPos);
+        transform.rotation = Quaternion.Euler(lockPos, lockPos, lockPos);
     }
 }
