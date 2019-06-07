@@ -25,6 +25,9 @@ public class StageSelect : MonoBehaviour
             case "Stage3Button":
                 stageName = "Level3";
                 break;
+            case "Stage4Button":
+                stageName = "Level4";
+                break;
             default:
                 Debug.LogError("Stage Button Name Error:" + gameObject.name);
                 break;
