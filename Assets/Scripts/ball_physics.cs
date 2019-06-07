@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ball_physics : MonoBehaviour
 {
@@ -28,7 +29,26 @@ public class ball_physics : MonoBehaviour
             isOriginal = true;
         }
 
-        _velocity = new Vector3(0f, 0f, 10f);
+        string SceneName = SceneManager.GetActiveScene().name;
+        switch(SceneName)
+        {
+            case "Level1":
+                _velocity = new Vector3(0f, 0f, 10f);
+                break;
+            case "Level2":
+                _velocity = new Vector3(0f, 0f, 10f);
+                break;
+            case "Level3":
+                _velocity = new Vector3(0f, 0f, 10f);
+                break;
+            case "Level4":
+                _velocity = new Vector3(0f, 0f, -10f);
+                break;
+            default:
+                _velocity = new Vector3(0f, 0f, 10f);
+                break;
+        }
+        
 
         _rb.AddForce(_velocity, ForceMode.VelocityChange);
         // _rb.AddForce(_velocity, ForceMode.ConstantForce);
