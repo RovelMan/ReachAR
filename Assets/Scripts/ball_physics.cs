@@ -16,6 +16,7 @@ public class ball_physics : MonoBehaviour
     private bool isOriginal;
     private GameObject ballClone;
     private GameObject board;
+
     void Start()
     {
         _rb = this.GetComponent<Rigidbody>();
@@ -30,7 +31,7 @@ public class ball_physics : MonoBehaviour
         _velocity = new Vector3(0f, 0f, 10f);
 
         _rb.AddForce(_velocity, ForceMode.VelocityChange);
-
+        // _rb.AddForce(_velocity, ForceMode.ConstantForce);
         if (isOriginal) {
             initialBallPos = ball.transform.position;
 
@@ -61,7 +62,7 @@ public class ball_physics : MonoBehaviour
         }
     }
     private void ReflectProjectile(Rigidbody rb, Vector3 reflectVector)
-    {    
+    {    reflectVector.y = 0f;
         _rb.velocity = Vector3.Reflect(_velocity, reflectVector);
     }
 
@@ -76,6 +77,12 @@ public class ball_physics : MonoBehaviour
     }
     void Update()
     {
-
+        if (!isOriginal)
+        {
+            Vector3 direction = _rb.velocity;
+            float speed = 9f;//direction.magnitude;
+            direction.Normalize();
+            _rb.velocity = direction * speed;
+        }
     }
 }
