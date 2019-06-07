@@ -18,7 +18,8 @@ public class controlBehaviour : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         ControlCanvas = GameObject.Find("ControlCanvas");
         script = (WallControl) ControlCanvas.GetComponent(typeof(WallControl));
-        float inc = 1;
+        float inc = 0.5f;
+        float rotInc = 4f;
         switch(gameObject.name)
         {
             case "RightButton":
@@ -34,11 +35,11 @@ public class controlBehaviour : MonoBehaviour, IPointerDownHandler, IPointerUpHa
                 positionInc = new Vector3(0f, 0f, -inc);
                 break;
             case "RotateRightButton":
-                rotationInc = Quaternion.Euler(0f, 2*inc, 0f);
+                rotationInc = Quaternion.Euler(0f, rotInc, 0f);
                 translate = false;
                 break;
             case "RotateLeftButton":
-                rotationInc = Quaternion.Euler(0f, -2*inc, 0f);
+                rotationInc = Quaternion.Euler(0f, -rotInc, 0f);
                 translate = false;
                 break;
             default:

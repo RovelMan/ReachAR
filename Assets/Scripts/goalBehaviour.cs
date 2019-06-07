@@ -70,6 +70,9 @@ public class goalBehaviour : MonoBehaviour
             case "Level3":
                 stageLevel = 3;
                 break;
+            case "Level4":
+                stageLevel = 4;
+                break;
             default:
                 stageLevel = 1;
                 break;
